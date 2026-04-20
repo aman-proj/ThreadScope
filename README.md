@@ -102,7 +102,7 @@ You provide a simple layout mapping operations using our custom Domain Specific 
    - Simulates an `IF/ELSE` divergence path. If a divergence condition is met, it penalizes the warp by adding serialization delay computation cycles.
 
 > [!NOTE] 
-> **Why only four commands?** This simulator is intentionally scoped to these four operations because they govern the absolute core of hardware bottlenecks: **Memory** (`LOAD`/`STORE`), **Execution Delay** (`COMPUTE`), and **Warp Divergence** (`BRANCH`). Keeping the instruction set tiny preserves clean architectural code suitable for educational and interview evaluation without bogging down into full compiler Abstract Syntax Tree (AST) complexities.
+> **Why only four commands?** This simulator is intentionally scoped to these four operations because they govern the absolute core of hardware bottlenecks: **Memory** (`LOAD`/`STORE`), **Execution Delay** (`COMPUTE`), and **Warp Divergence** (`BRANCH`). Keeping the instruction set tiny preserves clean architectural code without bogging down into full compiler Abstract Syntax Tree (AST) complexities.
 
 *Example of a badly unoptimized input `divergent_kernel.txt`:*
 ```text
