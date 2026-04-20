@@ -1,0 +1,9 @@
+# Bad Kernel: Bad coalescing, high warp divergence
+# tid % 2 triggers simulation logic for divergence penalty
+BRANCH tid % 2 == 0
+LOAD R1 A tid
+# Uncoalesced mock access: index uses R1 instead of tid directly
+LOAD R2 B tid
+COMPUTE R3 R1 * R2
+STORE C tid R3
+BRANCH divergence_end

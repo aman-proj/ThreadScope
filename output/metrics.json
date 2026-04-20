@@ -1,0 +1,6 @@
+{
+  "latency": 4,
+  "divergence": 0,
+  "coalescing_efficiency": 1,
+  "occupancy": 0.125
+}

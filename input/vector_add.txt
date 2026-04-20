@@ -1,0 +1,5 @@
+# Perfect Kernel: Good coalescing, no divergence
+LOAD R1 A tid
+LOAD R2 B tid
+COMPUTE R3 R1 + R2
+STORE C tid R3
