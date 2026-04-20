@@ -1,0 +1,13 @@
+# Compiled objects and executables
+*.o
+*.exe
+gpu_simulator
+
+# Output logs and metrics
+output/*.json
+output/*.png
+!output/.keep
+
+# Python cache
+__pycache__/
+*.pyc

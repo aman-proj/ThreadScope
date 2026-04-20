@@ -64,15 +64,15 @@ graph TD
 ```mermaid
 sequenceDiagram
     participant W as Warp (32 Threads)
-    participant IF as IF Path (Threads 0-15)
-    participant ELSE as ELSE Path (Threads 16-31)
+    participant PathA as IF Path (Threads 0-15)
+    participant PathB as ELSE Path (Threads 16-31)
     
-    W->>IF: Encountered Branch!
-    Note over IF: Thread 16-31 are Disabled (Idle)<br/>Executing IF block
-    IF->>W: Execution Finished
-    W->>ELSE: Switch Active Masks
-    Note over ELSE: Thread 0-15 are Disabled (Idle)<br/>Executing ELSE block
-    ELSE->>W: Execution Finished
+    W->>PathA: Encountered Branch!
+    Note over PathA: Thread 16-31 are Disabled (Idle)<br/>Executing IF block
+    PathA->>W: Execution Finished
+    W->>PathB: Switch Active Masks
+    Note over PathB: Thread 0-15 are Disabled (Idle)<br/>Executing ELSE block
+    PathB->>W: Execution Finished
     Note over W: Latency has doubled due to serialization!<br/>Added Divergence Penalty Cycles.
 ```
 
